@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { ArrowRight, ChevronRight, Menu, X, Code, Zap, Settings2, Sparkles } from "lucide-react"
+import { ArrowRight, ChevronRight, Menu, X, Recycle, Truck, Factory, BadgeCheck } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
 import { GridMotion } from "./ui/grid-motion"
 import { cn } from "@/lib/utils"
@@ -126,7 +126,7 @@ const transitionVariants = {
 
 const menuItems = [
   { name: "Услуги", href: "#services" },
-  { name: "Решения", href: "#solutions" },
+  { name: "Как работаем", href: "#solutions" },
   { name: "О нас", href: "#about" },
   { name: "Контакты", href: "#contact" },
 ]
@@ -201,9 +201,6 @@ const HeroHeader = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button variant="outline" size="sm" className={cn(isScrolled && "lg:hidden")}>
-                  <span>Войти</span>
-                </Button>
                 <Button
                   size="sm"
                   className={cn(
@@ -212,7 +209,7 @@ const HeroHeader = () => {
                       : "hidden bg-orange-500 hover:bg-orange-600",
                   )}
                 >
-                  <span>Начать</span>
+                  <span>Оставить заявку</span>
                 </Button>
               </div>
             </div>
@@ -227,9 +224,9 @@ const Logo = ({ className }: { className?: string }) => {
   return (
     <div className={cn("flex items-center space-x-2", className)}>
       <div className="bg-orange-500 rounded-lg p-2">
-        <Code className="h-6 w-6 text-white" />
+        <Recycle className="h-6 w-6 text-white" />
       </div>
-      <span className="text-xl font-bold">КодМастер</span>
+      <span className="text-xl font-bold">ДробинаТех</span>
     </div>
   )
 }
@@ -247,33 +244,16 @@ const CardDecorator = ({ children }: { children: React.ReactNode }) => (
 )
 
 export default function SoftwareDevelopmentWebsite() {
+  const img1 = "https://cdn.poehali.dev/projects/f481e132-c0ad-40ee-9760-43ca46d163e9/files/d5213067-0cf9-41c2-9caf-51c0a8f9ba16.jpg"
+  const img2 = "https://cdn.poehali.dev/projects/f481e132-c0ad-40ee-9760-43ca46d163e9/files/0e9b5548-cdac-4f1e-81b3-07bcadaef49d.jpg"
+  const img3 = "https://cdn.poehali.dev/projects/f481e132-c0ad-40ee-9760-43ca46d163e9/files/a5515a6c-c376-407b-b2f7-ba8617f65dff.jpg"
+
   const gridItems = [
-    "https://cdn.poehali.dev/templates/landing-page/fluid-gradient.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/vr-experience.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/ai-whiteboard.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/human-ai.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/digital-eye.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/robot.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/purple-flow.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/data-beam.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/ai-keyboard.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/fiber-optic.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/fluid-gradient.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/vr-experience.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/ai-whiteboard.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/human-ai.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/digital-eye.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/robot.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/purple-flow.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/data-beam.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/ai-keyboard.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/fiber-optic.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/fluid-gradient.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/vr-experience.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/ai-whiteboard.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/human-ai.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/digital-eye.jpg",
-    "https://cdn.poehali.dev/templates/landing-page/robot.jpg",
+    img1, img2, img3, img1, img2, img3,
+    img1, img2, img3, img1, img2, img3,
+    img1, img2, img3, img1, img2, img3,
+    img1, img2, img3, img1, img2, img3,
+    img1, img2,
   ]
 
   return (
@@ -301,7 +281,7 @@ export default function SoftwareDevelopmentWebsite() {
                     href="#services"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                   >
-                    <span className="text-foreground text-sm">Индивидуальные решения для малого бизнеса</span>
+                    <span className="text-foreground text-sm">Полный цикл переработки пивной дробины</span>
                     <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
                     <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
@@ -317,14 +297,13 @@ export default function SoftwareDevelopmentWebsite() {
                   </a>
 
                   <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                    Трансформируйте бизнес с{" "}
+                    Скупаем и перерабатываем{" "}
                     <span className="inline-block text-orange-500 text-6xl md:text-7xl xl:text-[5.25rem] font-semibold">
-                      современным ПО
+                      пивную дробину
                     </span>
                   </h1>
                   <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                    Создаем масштабируемые и эффективные программные решения под ваши бизнес-задачи.
-                    От веб-приложений до мобильных приложений - помогаем малому бизнесу расти с помощью технологий.
+                    Устанавливаем шнековые сепараторы прямо на производстве, вывозим влажную дробину и перерабатываем в ценное сырьё. Выгодно для пивоваренных заводов и квасных предприятий.
                   </p>
                 </AnimatedGroup>
 
@@ -344,11 +323,11 @@ export default function SoftwareDevelopmentWebsite() {
                 >
                   <div key={1} className="bg-orange-500/10 rounded-[14px] border border-orange-200 p-0.5">
                     <Button size="lg" className="rounded-xl px-5 text-base bg-orange-500 hover:bg-orange-600">
-                      <span className="text-nowrap">Бесплатная консультация</span>
+                      <span className="text-nowrap">Оставить заявку</span>
                     </Button>
                   </div>
                   <Button key={2} size="lg" variant="ghost" className="h-10.5 rounded-xl px-5 hover:text-orange-500">
-                    <span className="text-nowrap">Наши работы</span>
+                    <span className="text-nowrap">Как это работает</span>
                   </Button>
                 </AnimatedGroup>
               </div>
@@ -383,83 +362,19 @@ export default function SoftwareDevelopmentWebsite() {
                 <div className="group relative m-auto max-w-5xl px-6">
                   <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
                     <a href="#contact" className="block text-sm duration-150 hover:opacity-75 text-orange-500">
-                      <span>Готовы начать проект?</span>
+                      <span>Работаем по всей России</span>
                       <ChevronRight className="ml-1 inline-block size-3" />
                     </a>
                   </div>
                   <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-5 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                        alt="Логотип клиента"
-                        height="20"
-                        width="auto"
-                      />
-                    </div>
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-4 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/column.svg"
-                        alt="Логотип клиента"
-                        height="16"
-                        width="auto"
-                      />
-                    </div>
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-4 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/github.svg"
-                        alt="Логотип клиента"
-                        height="16"
-                        width="auto"
-                      />
-                    </div>
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-5 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/nike.svg"
-                        alt="Логотип клиента"
-                        height="20"
-                        width="auto"
-                      />
-                    </div>
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-5 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                        alt="Логотип клиента"
-                        height="20"
-                        width="auto"
-                      />
-                    </div>
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-4 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/laravel.svg"
-                        alt="Логотип клиента"
-                        height="16"
-                        width="auto"
-                      />
-                    </div>
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-7 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/lilly.svg"
-                        alt="Логотип клиента"
-                        height="28"
-                        width="auto"
-                      />
-                    </div>
-                    <div className="flex">
-                      <img
-                        className="mx-auto h-6 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/openai.svg"
-                        alt="Логотип клиента"
-                        height="24"
-                        width="auto"
-                      />
-                    </div>
+                    {[
+                      "Пивоварни", "Квасные заводы", "Агрохолдинги", "Фермерства",
+                      "Комбикормовые заводы", "Биогазовые станции", "Птицефабрики", "Животноводство"
+                    ].map((name) => (
+                      <div key={name} className="flex items-center justify-center">
+                        <span className="text-sm font-medium text-muted-foreground opacity-70 text-center leading-tight">{name}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </section>
@@ -471,25 +386,25 @@ export default function SoftwareDevelopmentWebsite() {
           <div className="mx-auto max-w-5xl px-6">
             <div className="text-center">
               <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-                Почему выбирают <span className="text-orange-500">КодМастер</span>
+                Почему выбирают <span className="text-orange-500">ДробинаТех</span>
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Мы создаем качественные программные решения, которые помогают вашему бизнесу расти и преуспевать в цифровом мире.
+                Мы берём на себя все хлопоты — от установки оборудования до вывоза и сбыта. Вы просто получаете деньги.
               </p>
             </div>
             <Card className="mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 border-orange-200 *:text-center md:mt-16 md:max-w-full md:grid-cols-3 md:divide-x md:divide-y-0">
               <div className="group shadow-zinc-950/5">
                 <CardHeader className="pb-3">
                   <CardDecorator>
-                    <Zap className="size-6 text-orange-500" aria-hidden />
+                    <Factory className="size-6 text-orange-500" aria-hidden />
                   </CardDecorator>
 
-                  <h3 className="mt-6 font-medium">Быстрая разработка</h3>
+                  <h3 className="mt-6 font-medium">Устанавливаем оборудование</h3>
                 </CardHeader>
 
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Быстрое прототипирование и гибкий процесс разработки для скорейшего вывода вашего продукта на рынок.
+                    Монтируем шнековые сепараторы прямо на вашем производстве. Оборудование наше — вы не тратите ни рубля.
                   </p>
                 </CardContent>
               </div>
@@ -497,15 +412,15 @@ export default function SoftwareDevelopmentWebsite() {
               <div className="group shadow-zinc-950/5">
                 <CardHeader className="pb-3">
                   <CardDecorator>
-                    <Settings2 className="size-6 text-orange-500" aria-hidden />
+                    <Truck className="size-6 text-orange-500" aria-hidden />
                   </CardDecorator>
 
-                  <h3 className="mt-6 font-medium">Масштабируемые решения</h3>
+                  <h3 className="mt-6 font-medium">Сами вывозим дробину</h3>
                 </CardHeader>
 
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Созданы для роста вместе с вашим бизнесом - наши решения масштабируются по мере развития ваших потребностей.
+                    Забираем влажную пивную дробину по согласованному графику. Никаких очередей и простоев на производстве.
                   </p>
                 </CardContent>
               </div>
@@ -513,15 +428,15 @@ export default function SoftwareDevelopmentWebsite() {
               <div className="group shadow-zinc-950/5">
                 <CardHeader className="pb-3">
                   <CardDecorator>
-                    <Sparkles className="size-6 text-orange-500" aria-hidden />
+                    <BadgeCheck className="size-6 text-orange-500" aria-hidden />
                   </CardDecorator>
 
-                  <h3 className="mt-6 font-medium">Современные технологии</h3>
+                  <h3 className="mt-6 font-medium">Платим сразу</h3>
                 </CardHeader>
 
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Используем новейшие технологии и лучшие практики, чтобы ваше ПО было готово к будущему.
+                    Честная цена за тонну, прозрачный расчёт и быстрая оплата. Превращаем ваши отходы в стабильный доход.
                   </p>
                 </CardContent>
               </div>
@@ -537,7 +452,7 @@ export default function SoftwareDevelopmentWebsite() {
             <div className="space-y-4 sm:col-span-2 lg:col-span-1">
               <Logo />
               <p className="text-sm text-muted-foreground max-w-xs">
-                Трансформируйте свой бизнес с помощью индивидуальных программных решений. Создаем масштабируемые приложения, которые растут вместе с вашим успехом.
+                Скупаем влажную пивную дробину, устанавливаем шнековые сепараторы и перерабатываем отходы квасных и пивоваренных производств в ценное сырьё.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
@@ -563,28 +478,28 @@ export default function SoftwareDevelopmentWebsite() {
               <h3 className="text-sm font-semibold text-foreground">Услуги</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Веб-разработка
+                  <a href="#services" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Скупка дробины
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Мобильные приложения
+                  <a href="#services" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Аренда сепараторов
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Заказное ПО
+                  <a href="#services" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Вывоз отходов
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Разработка API
+                  <a href="#services" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Переработка сырья
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Облачные решения
+                  <a href="#services" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Долгосрочные контракты
                   </a>
                 </li>
               </ul>
@@ -595,28 +510,23 @@ export default function SoftwareDevelopmentWebsite() {
               <h3 className="text-sm font-semibold text-foreground">Компания</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                  <a href="#about" className="text-muted-foreground hover:text-orange-500 transition-colors">
                     О нас
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Наша команда
+                  <a href="#solutions" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Как работаем
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Карьера
+                  <a href="#contact" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Партнёрам
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Кейсы
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Блог
+                  <a href="#contact" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                    Покупателям дробины
                   </a>
                 </li>
               </ul>
@@ -635,7 +545,7 @@ export default function SoftwareDevelopmentWebsite() {
                       d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="break-all">info@kodmaster.ru</span>
+                  <span className="break-all">info@drobinatech.ru</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -646,7 +556,7 @@ export default function SoftwareDevelopmentWebsite() {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  <span>+7 (495) 123-45-67</span>
+                  <span>+7 (495) 000-00-00</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <svg className="h-4 w-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -663,11 +573,7 @@ export default function SoftwareDevelopmentWebsite() {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span>
-                    ул. Технопарковая, 15
-                    <br />
-                    Москва, 123456
-                  </span>
+                  <span>Работаем по всей России</span>
                 </li>
               </ul>
             </div>
@@ -676,7 +582,7 @@ export default function SoftwareDevelopmentWebsite() {
           {/* Bottom section */}
           <div className="mt-12 pt-8 border-t border-orange-200">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-              <div className="text-sm text-muted-foreground">2024 КодМастер. Все права защищены.</div>
+              <div className="text-sm text-muted-foreground">2026 ДробинаТех. Все права защищены.</div>
               <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                 <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
                   Политика конфиденциальности
